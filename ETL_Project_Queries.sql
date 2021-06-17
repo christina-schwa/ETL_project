@@ -43,7 +43,7 @@ GROUP BY c.state;
 /*There appears to be even less of a correlation between the sum of all arrests for specific property crimes and the total offenses marked as "violent crime." In a few states (e.g., Alaska), these numbers are close, but in many others (e.g., North Carolina) they are extremely different.
 
 /*6. How do the reports of "rape_legacy" versus "rape_revised" compare from year to year? How long did it take for agencie to shift from the old definition to the new definition?*/
-SELECT year, sum(rape_legacy), sum(rape_revised)
+SELECT year, sum(rape_legacy) AS r_old_definition, sum(rape_revised) AS r_new_definition
 FROM summary
 GROUP BY year
 ORDER BY year;
